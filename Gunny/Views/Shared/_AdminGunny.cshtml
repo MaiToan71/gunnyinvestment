@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>  @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="icon" href="~/imgs/z3377637502356_f41bf63db3f7b1883988cb645541b32d.jpg">
+    <link href="~/css/Home.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/carousel/">
+    <meta property='og:type' content='website' />
+    <meta property="og:title" charset="windows-1252" http-equiv="Content-Type" itemprop="headline" content="Gunny Investment" />
+    <meta property="og:description" charset="windows-1258" itemprop="description" content="Gunny Investment" />
+    <meta property="og:image" itemprop="thumbnailUrl" content="~/imgs/z3377637276470_e24cfcae73e1fef217585c12e4848b91.jpg" />
+    <meta property="og:image:width" content="320">
+    <meta property="og:image:height" content="180">
+    <link href="~/lib/bootstrap.min..css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container-fluid" style=" position: absolute;">
+        <div class="row">
+            <div class="sidebar col-md-2  col-sm-12 d-flex justify-content-center flex-column">
+                <div class="list-sidebar">
+                    <a class="ChoiNgay_new" title="Tải game" href="https://drive.google.com/file/d/1i9dIv1eebLi762ytaN8fd6LTLifJMPiq/view?usp=sharing">Tải game</a>
+                    <a href="https://www.facebook.com/Support.Gunnymeta" target="_blank" class="icons-bt-hotline"></a>
+                </div>
+                <a href="https://www.facebook.com/Support.Gunnymeta" target="_blank" class="icons-bt-hotline"></a>
+            </div>
+            <div class="col-md-8 col-sm-12" style="margin-bottom: 20px;">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        <div class="my-account">
+                            <p style="text-align:center"><a href="/AdminGunny/home">Trang chủ</a></p>
+                            <h5>Xin chào,</h5>
+                            <div id="login"></div>
+                        </div>
+                        <div class="dropdown-box  ">
+                            <div class="drowBox">
+                                <div class="opener">
+                                    <a href="javascript:;">Quản lý Users</a>
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li><a href="/admingunny/users">Users</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="drowBox">
+                                <div class="opener">
+                                    <a href="/admingunny/payments">Quản lý nạp/nút</a>
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                               
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-9 right-menu">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <div class="fb-page"
+                     data-href="https://www.facebook.com/imdb"
+                     data-width="340"
+                     data-hide-cover="false"
+                     data-show-facepile="true"></div>
+                <div class="Social">
+                    <div id="facebook" class="Social-post">
+                        <div class="fb-page fb_iframe_widget">
+                            <div class="fb-page"
+                                 data-href="https://www.facebook.com/Support.Gunnymeta"
+                                 data-width="380"
+                                 data-hide-cover="false"
+                                 data-show-facepile="false"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/assets/global/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.stock.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.0.1/chartjs-plugin-zoom.min.js" integrity="sha512-b+q5md1qwYUeYsuOBx+E8MzhsDSZeoE80dPP1VCw9k/KA9LORQmaH3RuXjlpu3u1rfUwh7s6SHthZM3sUGzCkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="~/lib/moment.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".timecreate").each(function () {
+                var utcSeconds = $(this).text();
+                var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+                let time = d.setUTCSeconds(utcSeconds);
+                let formatTime = moment(time).format('DD-MM-YYYY HH:mm')
+                $(this).text(formatTime)
+            });
+            $('#username-input').val($.cookie("gunny_username"))
+            if ($.cookie("gunny_userid_admin") != undefined) {
+                var html = `<ptitle="Tên tài khoản" id="username" href="">${$.cookie("gunny_username_admin")}</p>
+                                    <a title="Đăng xuất" href="/AdminGunny/logout">Đăng xuất</a>`
+                $('#login').append(html)
+            } else {
+                var html = ` <a title="Đăng nhập"  href="/AdminGunny/home">Đăng nhập</a>`
+                $('#login').append(html)
+            }
+            const opener = document.querySelectorAll(".opener");
+            const cont = document.querySelectorAll(".content");
+            const arrow = document.querySelectorAll(".opener i");
+
+            function dropdown(open, content, icon) {
+                for (let i = 0; i < open.length; i++) {
+                    open[i].addEventListener("click", function () {
+                        content[i].classList.toggle("content-active");
+                        icon[i].classList.toggle("rotate");
+                        for (var j = 0; j < open.length; j++) {
+                            if (i != j) {
+                                content[j].classList.remove("content-active");
+                                icon[j].classList.remove("rotate");
+                            }
+                        }
+                    });
+                }
+            }
+
+            dropdown(opener, cont, arrow);
+
+
+        });
+    </script>
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

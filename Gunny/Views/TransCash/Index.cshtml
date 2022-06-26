@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Gunny.Models.ServerList>
+@{
+    ViewData["Title"] = "Chuyển xu vào game";
+    Layout = "~/Views/Shared/_AccountAdmin.cshtml";
+
+    List<Gunny.Controllers.TransCashController.Sys_Users_Detail> listUser = ViewBag.listUsers;
+
+}
+<h1>Chuyển xu vào game</h1>
+<hr />
+@Html.AntiForgeryToken()
+@if (@TempData["AlerMessageSuccess"] != null)
+{
+    <div class="alert alert-success" role="alert" style="display: flex; justify-content: center; width: 100%; }">
+        @TempData["AlerMessageSuccess"]
+    </div>
+}
+@if (@TempData["AlerMessageError"] != null)
+{
+    <div class="alert alert-danger" role="alert" style="display: flex; justify-content: center; width: 100%; }">
+        @TempData["AlerMessageError"]
+    </div>
+}
+<div class="row">
+    <div class="col-md-4 gunny-text">
+        Chọn máy chủ
+    </div>
+    <div class="col-md-6">
+        <select _ngcontent-uhj-c3="" class="form-control ng-valid ng-touched ng-dirty" name="ServerId" id="ServerId" required="">
+            @foreach (var item in Model)
+            {
+                <option value="@item.ServerId">@item.ServerName</option>
+            }
+
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 gunny-text">
+        Chọn tài khoản
+    </div>
+    <div class="col-md-6">
+        <select _ngcontent-uhj-c3="" class="form-control ng-valid ng-touched ng-dirty" name="UserID" id="UserID" required="">
+            @if (listUser.Count == 0)
+            {
+                <option value="-1">Chưa có nhân vật</option>
+            }
+            else
+            {
+                foreach (var item in listUser)
+                {
+                    <option value="@item.UserID">@item.NickName</option>
+                }
+            }
+
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 gunny-text">
+        Xu muốn chuyển
+    </div>
+    <div class="col-md-6">
+        <input type ="number" id="amount" name="amount" class="form-control" value="10000" max="1000000000" />
+    </div>
+</div>
+<div class="d-flex justify-content-center " style="margin-top:10px; margin-bottom:10px">
+   <span style="color:orangered" id="mes"></span>
+</div>
+<div class="d-flex justify-content-center " style="margin-top:10px; margin-bottom:10px">
+    <button id="btn_Ok" type="submit" class="btn btn-primary ">Đồng ý </button>
+</div>
+<script src="~/js/jquery.min.js"></script>
+
+<script>
+    $("#ServerId").on("change", function () {
+        $.ajax({
+            url: "TransCash/getList?ServerID=" + $("#ServerId").val(),
+            type: "post",
+            dataType: "json",
+            success: function (result) {
+                $('#UserID').empty();
+                if (result.length == 0) {
+                    $('#UserID').append('<option selected="selected" value="-1">Chưa có nhân vật</option>');
+                }
+                else {
+                    var strAppend = '';
+                    for (var i = 0; i < result.length; i++) {
+                        strAppend += '<option value="' + result[i]['userID'] +'">' + result[i]['nickName'] + '</option>';
+                    }
+                    $('#UserID').append(strAppend);
+                }
+            }
+        });
+    });
+    $("#btn_Ok").on("click", function () {
+        $("#btn_Ok").attr("disabled", true);
+        $("#mes").html();
+        $.ajax({
+            url: "TransCash/Dotranscash",
+            type: "post",
+            dataType: "json",
+            data: { serverID: $("#ServerId").val(), userID: $('#UserID').val(), amount: $("#amount").val() },
+            success: function (result) {
+                $("#btn_Ok").attr("disabled", false);
+                if (result.code == 0) {
+                    document.getElementById("mes").style.color = 'blue';
+                }
+                else {
+                    document.getElementById("mes").style.color = 'orangered';
+                }
+                $("#mes").html(result.message);
+            }
+        });
+    });
+</script>

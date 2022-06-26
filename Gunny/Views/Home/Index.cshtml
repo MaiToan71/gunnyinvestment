@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+<style>
+</style>
+<div class="container marketing  ">
+    <div class="row">
+        <img class="img-fluid" src="~/imgs/z3377702267159_2ff8c05e0eb66ec151427a062ff00df4.jpg" />
+    </div>
+    <hr class="featurette-divider">
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="~/imgs/z3377637502356_f41bf63db3f7b1883988cb645541b32d.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Gà mới</h2>
+
+        </div>
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="~/imgs/z3377637572730_449849e11dda111b9446e49930c1bc99.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Gà vui vẻ</h2>
+        </div>
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="~/imgs/z3377637555249_b2abcaecb74a3275b23649f3f9697e64.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Gà cao cấp</h2>
+        </div>
+
+    </div>
+
+    <hr class="featurette-divider" id="text-1">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">GIỚI THIỆU DỰ ÁN? </h2>
+            <p class="lead">Gunny Investment là dự án Game Online được thay đổi định hướng, trở thành Game Đầu Tư (mới) dựa trên nền tảng của game truyền thống. Với định hướng này, chúng tôi mong muốn sẽ đem tới cho người chơi những trải nghiệm thú vị, khác biệt với những dự án Game đang có trên thị trường và tạo ra thu nhập dành cho người chơi của mình.</p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="~/imgs/z3377637517193_d240a3d4fb1a63b626d39a135eb11041.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette" id="text-2">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">CÁCH CHƠI GAME ! </h2>
+            <p class="lead">Mỗi người chơi sẽ sở hữu một nhân vật sau khi tạo tài khoản. Công việc của họ là đầu tư vốn ban đầu để nâng cấp sức mạnh của nhân vật rồi tham gia làm nhiệm vụ hoặc vượt phó bản để thu về lợi nhuận mỗi ngày. Khi người chơi vượt phó bản càng khó thì tỉ lệ thu về lợi nhuận sẽ càng cao. Ngoài ra, TOP 10 BXH cũng sẽ có những phần thưởng rất hấp dẫn mỗi tuần.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="~/imgs/z3377637645340_252b8788532cad8fd368e1ce1d98e41f.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <div class="row featurette" id="text-3">
+        <div class="col-md-7">
+            <h2 class="featurette-heading"> NẠP RÚT TRONG GAME </h2>
+            <p class="lead">
+                Với định hướng mới, người chơi có thể tùy ý nạp rút trong quá trình trải nghiệm. Thời gian nạp rút cũng không quá lâu, chỉ từ 3 – 5 phút.
+                </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="~/imgs/z3377637659776_1c9b4d34bec4bf61b51b1c05b71bad29.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+
+
+</div>
+
+@section Scripts {
+    <script>
+        function goToByScroll() {
+            // Reove "link" from the ID
+
+            // Scroll
+            $('html,body').animate({
+                scrollTop: $("#text-1").offset().top
+            },
+                'slow');
+        }
+        $(".my-menu-link-1").click(function (e) {
+            e.preventDefault();
+            goToByScroll();
+        })
+    </script>
+}

@@ -1,0 +1,47 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "http://127.0.0.1:2108/CenterService/?wsdl"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, ServiceReference"
+    ],
+    "references": [
+      "Microsoft.AspNetCore.Antiforgery, {Microsoft.AspNetCore.Antiforgery, 2.2.0}",
+      "Microsoft.AspNetCore.Authentication.Abstractions, {Microsoft.AspNetCore.Authentication.Abstractions, 2.2.0}",
+      "Microsoft.AspNetCore.Authentication.Core, {Microsoft.AspNetCore.Authentication.Core, 2.2.0}",
+      "Microsoft.AspNetCore.Authorization, {Microsoft.AspNetCore.Authorization, 2.2.0}",
+      "Microsoft.AspNetCore.Authorization.Policy, {Microsoft.AspNetCore.Authorization.Policy, 2.2.0}",
+      "Microsoft.AspNetCore.Cryptography.Internal, {Microsoft.AspNetCore.Cryptography.Internal, 2.2.0}",
+      "Microsoft.AspNetCore.DataProtection, {Microsoft.AspNetCore.DataProtection, 2.2.0}",
+      "Microsoft.AspNetCore.DataProtection.Abstractions, {Microsoft.AspNetCore.DataProtection.Abstractions, 2.2.0}",
+      "Microsoft.AspNetCore.Diagnostics.Abstractions, {Microsoft.AspNetCore.Diagnostics.Abstractions, 2.2.0}",
+      "Microsoft.AspNetCore.Hosting.Abstractions, {Microsoft.AspNetCore.Hosting.Abstractions, 2.2.0}",
+      "Microsoft.AspNetCore.Hosting.Server.Abstractions, {Microsoft.AspNetCore.Hosting.Server.Abstractions, 2.2.0}",
+      "Microsoft.AspNetCore.Html.Abstractions, {Microsoft.AspNetCore.Html.Abstractions, 2.2.0}",
+      "Microsoft.AspNetCore.Http, {Microsoft.AspNetCore.Http, 2.2.0}",
+      "Microsoft.AspNetCore.Http.Abstractions, {Microsoft.AspNetCore.Http.Abstractions, 2.2.0}",
+      "Microsoft.AspNetCore.Http.Extensions, {Microsoft.AspNetCore.Http.Extensions, 2.2.0}",
+      "Microsoft.AspNetCore.Http.Features, {Microsoft.AspNetCore.Http.Features, 2.2.0}",
+      "Microsoft.AspNetCore.JsonPatch, {Microsoft.AspNetCore.JsonPatch, 2.2.0}",
+      "Microsoft.AspNetCore.Mvc.Abstractions, {Microsoft.AspNetCore.Mvc.Abstractions, 2.2.0}",
+      "Microsoft.AspNetCore.Mvc.Core, {Microsoft.AspNetCore.Mvc.Core, 2.2.0}",
+      "Microsoft.AspNetCore.Mvc.DataAnnotations, {Microsoft.AspNetCore.Mvc.DataAnnotations, 2.2.0}",
+      "Microsoft.AspNetCore.Mvc.Formatters.Json, {Microsoft.AspNetCore.Mvc.Formatters.Json, 2.2.0}",
+      "Microsoft.AspNetCore.Mvc.ViewFeatures, {Microsoft.AspNetCore.Mvc.ViewFeatures, 2.2.0}",
+      "Microsoft.AspNetCore.Razor, {Microsoft.AspNetCore.Razor, 2.2.0}",
+      "Microsoft.AspNetCore.Razor.Language, {Microsoft.AspNetCore.Razor.Language, 5.0.0}",
+      "Microsoft.AspNetCore.Razor.Runtime, {Microsoft.AspNetCore.Razor.Runtime, 2.2.0}",
+      "Microsoft.AspNetCore.ResponseCaching.Abstractions, {Microsoft.AspNetCore.ResponseCaching.Abstractions, 2.2.0}",
+      "Microsoft.AspNetCore.Routing, {Microsoft.AspNetCore.Routing, 2.2.0}",
+      "Microsoft.AspNetCore.Routing.Abstractions, {Microsoft.AspNetCore.Routing.Abstractions, 2.2.0}",
+      "Microsoft.AspNetCore.WebUtilities, {Microsoft.AspNetCore.WebUtilities, 2.2.0}"
+    ],
+    "targetFramework": "net5.0",
+    "typeReuseMode": "Specified"
+  }
+}
